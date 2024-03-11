@@ -12,26 +12,28 @@ body{
     font-family: "Fredoka", sans-serif;
 }
 
-
-
 /* == THE TOP CONTROL == */
 
 .headerTop{
     width: 100%;
-    min-height: 50px;
+    min-height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    color: #ffffff;   
+    z-index: 100;
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px; */
 }
 .innerHeader{
     width: 90%;
+    height: inherit;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 .logo{
     font-size: 2.5em;
-    font-weight: bold;
 }
 .ulNav{
     display: flex;
@@ -42,49 +44,144 @@ body{
     padding: 0 10px;
 }
 .banner{
-    font-size: 30px;
-    height: 60vh;
-    font-weight: lighter;
-    background-color: rgba(255,255,255,1);
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
-.img{
-    background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5))
-    ,url(./img/Cover\ Page.png);
-    background-size: 200px cover;
+.heroSec{
+    width: inherit;
+    height: 800px;
+    background-image: linear-gradient(to bottom,rgba(0,0,0,.5),rgba(0,0,0,.5))
+    ,url(./img/covPix.jpg);
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    line-height: 100%;
+}
+.innerHeroSec{
+    width: 85%;
+    height: 52%;
+    display: flex;
     justify-content: space-between;
-    height: inherit;
+    align-items: center;
 }
 .proPix{
     width: 40%;
     height: 100%;
-    background-image: url(./img/ucPro.png);
-    background-size: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./img/ucPro.png); 
+    background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
-}
-.text {
-    padding: 20px;
-    margin-left: 100px;    
-    color: rgba(255,255,255);
-    /* line-height: 60px; */
-    position: relative;
-}
-.text>h4 {
-    width: 100%;
-    font-size: 90px;
    
 }
-.text>h2{
-    font-size: 15px;
+.proPix::before{
+    content: '';
+    /* position: relative; */
+    position: absolute;
+    width: 25%;
+    height: 45.5%;
+    top: 10.95em;
+    left: 49rem;
+    border: solid 1px #fed136;   
+    padding: 40px;
 }
-.text>h5{
+.innerHero{
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.text {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: first baseline;
+    justify-content: center;
+    color: #FFFFFF;
+}
+.Hi{
+    font-size: 2.3rem;
+    line-height: 100%;
+    letter-spacing: .3rem;    
+    color: #fed136;
+    font-family: "poppins-bold", sans-serif;
+    font-size: 2.3rem;
+    line-height: 100%;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);   
+}
+.name {
+    font-size: clamp(60px,8vw,100px);
+    line-height: 100%;
+    font-weight: 400;
+    letter-spacing: .3rem; 
+    margin: 0 auto;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    
+}
+.role{
+    letter-spacing: .3rem;
+    margin: 8px auto;
+    font-size: clamp(5px,2vw,18px);
+    line-height: 100%;
+}
+.do{
     font-size: 15px;
+    margin: 5px auto;
+    letter-spacing: .1rem;
+}
+
+.button{
+    margin: 30px auto 0 auto;
+    color: #ffffff;
+}
+
+.btn{
+    padding: 15px 30px;
+    font-size: 20px;
+    border: 0;
+    background-color: rgb(108, 108, 238);
+    text-align: center;
+    line-height: 100%;
+}
+.socialsSec {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    position: absolute;
+    bottom: 8em;
+    }
+.socialInner{
+    width: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     position: relative;
-    top: 15px;    
+    transform: translatex(-120%);
+}
+.soc{
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* margin: 0 auto; */
+    color: #eee;
+    padding: 10px;
 }
 
 /* == THE EX CONTROL == */
@@ -106,7 +203,7 @@ body{
     left: 50%;
     transform: translate(-50%,-50%);
     background-color: rgba(255,255,255,1);
-    border-radius: 50px;
+    /* border-radius: 50px; */
 }
 .exInfo {
     width: 25%;
@@ -158,14 +255,17 @@ body{
 }
 .aboutPix{
     width: 40%;
-    height: 100%;
-    background-image: url(./img/ucPro.png);
+    height: inherit;
+    background-image: url(./img/abt2.png);
     background-repeat: no-repeat;
     background-position: top;
+    background-size: cover;
+    background-clip: border-box;
 }
 .aboutText{
     width: 40%;
-    font-size: .95em;
+    height: inherit;
+    font-size: .95em;    
     color: #9ad1f1;
     text-align: justify;
     text-indent: left;
